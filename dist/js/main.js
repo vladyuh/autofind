@@ -195,6 +195,11 @@ function initFiles(){
         document.querySelector('.status__message').innerText = e.detail.addedFilesCount + " изображения добавлено";
 
         var count = e.detail.cachedFileArray;
+
+        if(count.length > 0){
+            container.querySelector('.custom-file-container__image-preview__wrapper').style.display = "block";
+        }
+
         if(count.length > 4){
             container.querySelector('.arrow-right').style.display ="flex"; 
             container.querySelector('.arrow-left').style.display ="flex"; 
@@ -206,6 +211,11 @@ function initFiles(){
         var id = e.detail.uploadId;
         var count = e.detail.cachedFileArray;
         var container = document.querySelector("[data-upload-id=" +id +"]");
+
+        if(count.length == 0){
+            container.querySelector('.custom-file-container__image-preview__wrapper').style.display = "none";
+        }
+
         if(count.length <= 4){
             container.querySelector('.arrow-right').style.display ="none"; 
             container.querySelector('.arrow-left').style.display ="none";

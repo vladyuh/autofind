@@ -33,7 +33,11 @@
   background: #fff;
   background-image: none !important;
   overflow-x: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   @media screen and (min-width: 641px) {
     overflow-x: hidden;
@@ -50,6 +54,10 @@
   background-repeat: no-repeat;
   background-position: center;
   aspect-ratio: 1.5 / 1;
+
+  @media screen and (min-width: 641px) {
+    width: calc(100% / 6 - 10px);
+  }
 
 }
 
@@ -74,6 +82,12 @@
   position: relative;
   overflow-x: hidden;
   margin-top: 15px;
+  display: none;
+  padding-top: 25%;
+
+  @media screen and (min-width: 641px) {
+    padding-top: calc(100% / 6);
+  }
 }
 
 .custom-file-container__image-preview__wrapper .arrow-right {

@@ -7,7 +7,7 @@
 @import "../blocks/components/components";
 @import "../blocks/modules/modules";
 
-.status{
+.status {
   position: fixed;
   bottom: 24px;
   left: 24px;
@@ -17,15 +17,16 @@
   background: #006BD2;
   display: flex;
   border-radius: 8px;
+  z-index: 2;
 
-  &__action{
+  &__action {
     margin-left: auto;
     font-weight: 600;
     cursor: pointer;
   }
 
   &__message,
-  &__action{
+  &__action {
     color: #fff;
     font-size: 14px;
     line-height: 20px;
