@@ -1,0 +1,99 @@
+.perf-no-animation * {
+    transition: none!important;
+    -webkit-animation: none!important;
+    animation: none!important;
+}
+
+html {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    background: $white;
+    color: $black;
+    letter-spacing: normal;
+    font-family: Futura, sans-serif;
+    scroll-padding-top: 69px;
+    scroll-behavior: smooth;
+}
+
+button:active,
+button:hover,
+input:active,
+input:focus,
+input:hover {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+    line-height: 130%;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+section {
+    position: relative;
+    padding: 20px 0;
+}
+
+body {
+    padding: 52px 0 0 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    width: 100%;
+    margin-top: auto;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 830px;
+    padding: 0 50px;
+    @media screen and (max-width: 1440px) {
+        max-width: 100%;
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 0 25px;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 0 20px;
+    }
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+
+    .section-h3{
+        width: 100%;
+    }
+}

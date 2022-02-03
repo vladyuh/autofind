@@ -1,0 +1,255 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+
+block variables
+	- const title = "Style Guide";
+
+block content
+	section#breadcrumbs
+		.container
+			+h2('Хлебные крошки')
+			+breadcrumb([
+				{
+					link: "/",
+					text: "Главная",
+				},
+				{
+					link: "/",
+					text: "Элементы",
+					isActive: true,
+				},
+			])
+	section#buttons
+		.container
+			+h2('Кнопки')
+			.buttons
+				+h3('Кнопки')
+				button.btn Кнопка
+				button.btn.btn-disabled Кнопка
+			br
+			.buttons
+				+h3('Кнопки с закругленными углами')
+				button.btn.btn-round Кнопка с закругленными углами
+				button.btn.btn-disabled.btn-round Кнопка с закругленными углами
+			br
+			.buttons
+				+h3('Кнопка cсылка')
+				a(href="/#editcontent").btn.btn-link.btn-round.smooth__scroll Кнопка ссылка
+			br
+			.buttons
+				+h3('Кнопка отправки')
+				button.btn.btn-round(type="submit") Кнопка отправки
+				button.btn.btn-loading.btn-round(type="submit") Кнопка отправки
+				button.btn.btn-success.btn-round(type="submit") Кнопка отправки
+				button.btn.btn-round.btn-disabled(type="submit") Кнопка отправки
+		br
+	section#textfields
+		.container
+			+h2('Текстовые поля')
+			+h3('Без иконок')
+			+input({
+				type: 'text',
+				placeholder: 'Введите ваше имя',
+				label: false,
+				required: true,
+			})
+			br
+			+input({
+				type: 'tel',
+				placeholder: 'Введите ваш телефон',
+				label: false,
+				required: true,
+			})
+			br
+			+textarea({
+				placeholder: 'Введите сообщение',
+				label: false,
+				required: true,
+			})
+			+h3('С иконкой')
+			+input-icon({
+				type: 'text',
+				placeholder: 'Введите ваше имя',
+				label: false,
+				required: true,
+				icon: "#ic_person",
+			})
+			br
+			+textarea-icon({
+				placeholder: 'Введите сообщение',
+				label: false,
+				required: true,
+				icon: "#ic_person",
+			})
+	section#selects
+		.container
+			+h2('Select')
+			+h3('Без иконок')
+			+selectCustom({
+				placeholder: "Выберите",
+				label: false,
+				data: ['Минск', 'Могилев'],
+				required: false,
+			})
+			+h3('С иконкой')
+			+selectCustomIcon({
+				placeholder: 'Выберите',
+				label: false,
+				data: ['Минск', 'Могилев'],
+				icon: "#ic_person",
+				required: false,
+			})
+	section#forms
+		.container
+			+h2('Формы')
+			form(action="/")
+				.form__field
+					+selectCustom({
+						name: "town",
+						placeholder: "Выберите город",
+						label: false,
+						data: ['Минск', 'Могилев', 'Брест', 'Гродно', 'Гомель', 'Витебск'],
+						required: true,
+					})
+				.form__field
+					+input({
+						name: "user",
+						type: 'text',
+						placeholder: 'Введите ваше имя',
+						label: false,
+						required: true,
+					})
+				.form__field
+					+input({
+						name: "phone",
+						type: 'tel',
+						placeholder: 'Введите ваш телефон',
+						label: false,
+						required: true,
+					})
+				.form__field
+					+textarea({
+						name: "message",
+						placeholder: 'Введите сообщение',
+						label: false,
+						required: true,
+					})
+				button.btn(type="submit") Отправить
+	section#radio
+		.container
+			+h2('Радиокнопки')
+			+h3('Радиокнопки')
+			+radio({
+				label: 'Unchecked',
+				name: 'name',
+				disabled: false,
+				check: false
+			})
+			+radio({
+				label: 'Checked',
+				name: 'name',
+				disabled: false,
+				check: true,
+			})
+			+radio({
+				label: 'Disabled',
+				name: 'name',
+				disabled: true,
+				check: false,
+			})
+			+h3('Чекбоксы')
+			+checkbox({
+				label: 'Unchecked',
+				disabled: false,
+				check: false,
+			})
+			+checkbox({
+				label: 'Unchecked and disabled',
+				disabled: true,
+				check: false,
+			})
+			+checkbox({
+				label: 'Checked',
+				disabled: false,
+				check: true,
+			})
+			+checkbox({
+				label: 'Checked and disabled',
+				disabled: true,
+				check: true,
+			})
+	section#editcontent
+		.container
+			.edit-content
+				h1 Заголовок h1
+				h2 Заголовок h2
+				h3 Заголовок h3
+				h4 Заголовок h4
+				br
+				h3 Параграф p
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				h3 Other tags
+				br
+				h4 Ссылка
+				a.link-hover(href="#" title="Ссылка на ресурс") Ссылка на ресурс
+				br
+				br
+				h4 Bold
+				br
+				bold Lorem ipsum dolor sit amet, consectetur
+				br
+				br
+				h4 Italic
+				br
+				i Lorem ipsum dolor sit amet, consectetur
+				br
+				br
+				h3 Маркированный список
+				ul
+					li Item 1
+					li Item 2
+					li Item 3
+				h3 Нумерованный список
+				ol
+					li Item 1
+					li Item 2
+					li Item 3
+				.table
+					table
+						tbody
+							tr.head
+								th Заголовок таблицы
+								th Заголовок таблицы
+							tr.row
+								th Столбец таблицы
+								th Столбец таблицы
+							tr.row
+								th Столбец таблицы
+								th Столбец таблицы
+							tr.row
+								th Столбец таблицы
+								th Столбец таблицы
+				br
+				br
+	section#image
+		.container
+			picture
+				source(srcset="./img/back-responsive-320.webp",media="(max-width: 320px)",type="image/webp")
+				source(srcset="./img/back-responsive-480.webp",media="(max-width: 480px)",type="image/webp")
+				source(srcset="./img/back-responsive-768.webp",media="(max-width: 768px)",type="image/webp")
+				source(srcset="./img/back-responsive-1024.webp",media="(max-width: 1024px)",type="image/webp")
+				source(srcset="./img/back-responsive-320.jpg",media="(max-width: 320px)",type="image/jpeg")
+				source(srcset="./img/back-responsive-480.jpg",media="(max-width: 480px)",type="image/jpeg")
+				source(srcset="./img/back-responsive-768.jpg",media="(max-width: 768px)",type="image/jpeg")
+				source(srcset="./img/back-responsive-1024.jpg",media="(max-width: 1024px)",type="image/jpeg")
+				source(srcset="./img/back-responsive.webp", type="image/webp")
+				img(data-src="./img/back-responsive.jpg", loading="lazy", class="lazyload", alt="Background")
+	//.map-container
+		img.preview(class="lazyload" loading="lazy" data-src="https://static-maps.yandex.ru/1.x/?ll=30.310338,59.955227&size=650,400&z=16&l=map&scale=1.0&pt=30.310338,59.955227,ya_ru", alt="Карта")
+		.map#map(data-x="59.955227" data-y="30.310338")
+block scripts
+	script(src="/js/main.js")

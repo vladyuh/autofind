@@ -1,0 +1,177 @@
+$uncheckedBg: #fff;
+$checkedBgRadio: #fff;
+$checkedBgCheck: #fff;
+$borderColor:#006BD2;
+$disabledBg: #9C9C9C;
+
+.checkbox {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 140%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: flex-start;
+    padding: 5px 0;
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        display: none;
+    }
+
+    & .checkbox__text {
+        font-size: 14px;
+        color: #000;
+    }
+
+    & .checkbox__elem {
+        top: 0.15em;
+        position: relative;
+        height: 18px;
+        width: 18px;
+        min-width: 18px;
+        background-color: $uncheckedBg;
+        border: 1px solid $borderColor;
+        display: inline-block;
+        margin-right: 12px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 8px;
+            height: 5px;
+            transition: 0.25s cubic-bezier(0.08, 0.82, 0.17, 1);
+            opacity: 0;
+            background-size: 13px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-left: 2px solid $borderColor;
+            border-bottom: 2px solid $borderColor;
+            transform: rotate(-45deg);
+            background: transparent;
+        }
+    }
+
+    & input {
+
+        &:disabled {
+            &:checked~.checkbox__elem {
+                background-color: $disabledBg;
+            }
+
+            &~.checkbox__elem {
+                background: $disabledBg;
+            }
+
+            &~.checkbox__text {
+                color: #000;
+            }
+        }
+
+        &:checked~.checkbox__elem {
+            background-color: $checkedBgCheck;
+            z-index: 1;
+        }
+
+        &:checked~.checkbox__elem:after {
+            opacity: 1;
+            border-radius: 0;
+        }
+    }
+
+}
+
+.radio {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 140%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: flex-start;
+    padding: 5px 0;
+    margin-top: 10px;
+
+    &__desc {
+        display: block;
+    }
+
+    &__desc {
+        font-size: 12px;
+        color: #959595;
+    }
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        display: none;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: #000;
+    }
+
+    &__elem {
+        top: 0.15em;
+        position: relative;
+        height: 18px;
+        width: 18px;
+        min-width: 18px;
+        border: 1px solid $borderColor;
+        display: inline-block;
+        margin-right: 12px;
+        border-radius: 50%;
+        background: $uncheckedBg;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 7px;
+            height: 7px;
+            background: $borderColor;
+            transition: 0.25s cubic-bezier(.08, .82, .17, 1);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+
+    & input {
+
+        &:disabled {
+            &~.radio__text {
+                color: #959595;
+            }
+            &~.radio__elem {
+                background-color: $disabledBg;
+            }
+        }
+
+        &:checked~.radio__elem {
+            background-color: $checkedBgRadio;
+        }
+
+        &:checked~.radio__elem:after {
+            opacity: 1;
+        }
+    }
+
+}

@@ -1,0 +1,102 @@
+.custom-file-container__label {
+  display: none;
+}
+
+.custom-file-container__custom-file__custom-file-input {
+  display: none;
+}
+
+.custom-file-container__custom-file__custom-file-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px dashed #9C9C9C;
+  padding: 15px;
+  height: 85px;
+  font-size: 14px;
+}
+
+.custom-file-container__custom-file__custom-file-control__button {
+  display: none;
+  font-size: 14px;
+  line-height: 38px;
+  text-decoration-line: underline;
+  color: #006BD2;
+  font-weight: 600;
+}
+
+.custom-file-container__image-preview {
+  display: flex;
+  margin: 0 -5px;
+  background: #fff;
+  background-image: none !important;
+  overflow-x: auto;
+  position: relative;
+
+  @media screen and (min-width: 641px){
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+
+}
+
+.custom-file-container__image-multi-preview {
+  width: calc(25% - 10px);
+  min-height: 53px;
+  margin: 5px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 1.5 / 1;
+
+  @media screen and (min-width: 641px){
+    width: calc(100% / 6 - 10px);
+  }
+
+}
+
+.custom-file-container__image-multi-preview__single-image-clear__icon {
+  width: 20.25px;
+  height: 20.25px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submitted input:invalid~.custom-file-container__custom-file__custom-file-control {
+  border-color: red;
+}
+
+.custom-file-container__image-preview__wrapper{
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 15px;
+}
+
+.custom-file-container__image-preview__wrapper .arrow-right{
+  position: absolute;
+  right: -5px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0) 100%);
+  width: 30px;
+  display: none;
+
+  @media screen and (min-width: 641px){
+    display: none !important;
+  }
+
+}

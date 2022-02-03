@@ -1,0 +1,72 @@
+include ../../../views/helpers/mixins.pug
+//- input
+mixin input(data)
+  .input(class="input-"+(data.type ? data.type : '')+"")
+    if data.label 
+      span.label=data.label
+    if data.required
+      input(type=data.type, name=data.name, placeholder=data.placeholder, required)
+    else
+      input(type=data.type, name=data.name, placeholder=data.placeholder)
+//- input with icon
+mixin input-icon(data)
+  .input(class="input-"+(data.type ? data.type : '')+" input-icon")
+    if data.label 
+      span.label=data.label
+    .input-icon__wrap
+      span.icon: +icons(data.icon,'20')
+      if data.required
+        input(type=data.type, name=data.name, placeholder=data.placeholder, required)
+      else
+        input(type=data.type, name=data.name, placeholder=data.placeholder)
+//- textarea
+mixin textarea(data)
+  .textarea
+    if data.label 
+      span.label=data.label
+    if data.required
+      textarea(placeholder=data.placeholder, name=data.name, required)
+    else
+      textarea(placeholder=data.placeholder, name=data.name)
+//- textarea with icon
+mixin textarea-icon(data)
+  .textarea
+    if data.label 
+      span.label=data.label
+    .input-icon__wrap
+      span.icon: +icons(data.icon,'20')
+      if data.required
+        textarea(placeholder=data.placeholder, name=data.name, required)
+      else
+        textarea(placeholder=data.placeholder, name=data.name)
+//- select
+mixin selectCustom(data)
+  .select
+    if data.label 
+      span.label=data.label
+    .select__value
+      .value= data.placeholder
+      .select__dropdown(data-title=data.label)
+        each item in data.data
+          label
+            span=item
+            if (data.required)
+              input(type="radio", name=data.name, value=item, required)
+            else
+              input(type="radio", name=data.name, value=item)
+//- select with icon
+mixin selectCustomIcon(data)
+  .select.select-icon
+    if data.label 
+      span.label=data.label
+    .select__value
+      span.icon: +icons(data.icon,'20')
+      .value= data.placeholder
+      .select__dropdown(data-title=data.label)
+        each item in data.data
+          label
+            span=item
+            if (data.required)
+              input(type="radio", name=data.name, value=item, required)
+            else
+              input(type="radio", name=data.name, value=item)

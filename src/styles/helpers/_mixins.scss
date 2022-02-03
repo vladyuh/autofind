@@ -1,0 +1,8 @@
+@mixin bgimage_cover {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    transition: 0.3s ease;
+}

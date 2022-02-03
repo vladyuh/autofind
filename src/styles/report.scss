@@ -1,0 +1,30 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+section {
+  &.report {
+    padding-top: 10px;
+
+
+    .custom-file-container{
+      margin-top: 4px;
+    }
+
+    .textarea{
+      margin: 8px 0 10px;
+    }
+
+
+    .form__links{
+      margin: 20px 0 12px;
+      .btn{
+        height: 57px;
+      }
+    }
+
+  }
+
+  
+
+}

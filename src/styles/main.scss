@@ -1,0 +1,34 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/libs";
+@import "base/fonts";
+@import "base/general";
+@import "../blocks/components/components";
+@import "../blocks/modules/modules";
+
+.status{
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  max-width: 830px;
+  margin: 0 auto;
+  background: #006BD2;
+  display: flex;
+  border-radius: 8px;
+
+  &__action{
+    margin-left: auto;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__message,
+  &__action{
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px;
+  }
+}

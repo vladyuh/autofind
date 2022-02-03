@@ -1,0 +1,10 @@
+include ../../components/burger/burger
+.container
+  .header.header-without-burger
+    .header-burger
+      +burger
+    .header-logo
+      .header-logo__img
+        img(src="/img/common/logo.png", alt="")
+    a(href="#").header-account
+      +icons('#ic_account-28',28)

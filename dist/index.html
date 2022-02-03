@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Отчет об авто</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <link rel="preload" href="/fonts/FuturaPT-Light.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/fonts/FuturaPT-Medium.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/fonts/FuturaPT-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+    <link rel="stylesheet" href="/styles/report.min.css">
+  </head>
+  <body class="perf-no-animation page">
+    <header>
+      <div class="container">
+        <div class="header header-without-burger">
+          <div class="header-burger">
+                  <div class="burger"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="header-logo">
+            <div class="header-logo__img"><img src="/img/common/logo.png" alt=""></div>
+          </div><a class="header-account" href="#">
+            <svg width="28" height="28">
+              <use xlink:href="/img/sprites/sprite.svg#ic_account-28"></use>
+            </svg></a>
+        </div>
+      </div>
+    </header>
+    <div class="mobileMenu">
+      <div class="container">
+        <div class="mobileMenu-header">
+          <div class="mobileMenu-header__toggle">
+                <div class="burger open"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mobileMenu-nav">
+          <ul class="mobileMenu-nav__ul">
+            <li><a href="/styleguide.html#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="/styleguide.html#buttons">Buttons</a></li>
+            <li><a href="/styleguide.html#textfields">Text fields</a></li>
+            <li><a href="/styleguide.html#radio">Radio</a></li>
+            <li><a href="/styleguide.html#editcontent">Edit text</a></li>
+          </ul>
+        </div>
+        <div class="mobileMenu-footer"></div>
+      </div>
+    </div>
+    <main>
+      <section class="report">
+        <div class="container">
+          <div class="section-h2">Отчет об авто</div>
+          <form>
+            <div class="form__field">
+              <div class="select"><span class="label">Марка</span>
+                <div class="select__value">
+                  <div class="value">Выберите</div>
+                  <div class="select__dropdown" data-title="Марка">
+                    <label><span>Ford</span>
+                      <input type="radio" name="marka" value="Ford" required="required"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="select"><span class="label">Модель</span>
+                <div class="select__value">
+                  <div class="value">Выберите</div>
+                  <div class="select__dropdown" data-title="Модель">
+                    <label><span>Ford</span>
+                      <input type="radio" name="model" value="Ford" required="required"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="select"><span class="label">Год</span>
+                <div class="select__value">
+                  <div class="value">Выберите</div>
+                  <div class="select__dropdown" data-title="Год">
+                    <label><span>1997</span>
+                      <input type="radio" name="year" value="1997" required="required"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__field files collapse"><span class="label">Документы:</span>
+              <label class="checkbox collapse-toggle">
+                <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Тех. паспорт</span>
+              </label>
+              <div class="collapse-content">
+                <div class="custom-file-container" data-upload-id="MyFile" data-glide-el="track">
+                  <label class="custom-file-container__label">Изображения<a class="custom-file-container__image-clear" href="javascript:void(0)" title="Clear Image">&times;</a>
+                  </label>
+                  <label class="custom-file-container__custom-file">
+                    <input class="custom-file-container__custom-file__custom-file-input" type="file" accept="image/png, image/jpeg" required="required" name="MyFile" multiple="" aria-label="Choose File"/>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760"/><span class="custom-file-container__custom-file__custom-file-control"></span>
+                  </label>
+                  <div class="custom-file-container__image-preview__wrapper"><span class="arrow-right">
+                      <svg width="10" height="10">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arrow-right-10"></use>
+                      </svg></span>
+                    <ul class="custom-file-container__image-preview"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__field files collapse">
+              <label class="checkbox collapse-toggle">
+                <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Сервисная книга</span>
+              </label>
+              <div class="collapse-content">
+                <div class="custom-file-container" data-upload-id="MyFile1" data-glide-el="track">
+                  <label class="custom-file-container__label">Изображения<a class="custom-file-container__image-clear" href="javascript:void(0)" title="Clear Image">&times;</a>
+                  </label>
+                  <label class="custom-file-container__custom-file">
+                    <input class="custom-file-container__custom-file__custom-file-input" type="file" accept="image/png, image/jpeg" required="required" name="MyFile1" multiple="" aria-label="Choose File"/>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760"/><span class="custom-file-container__custom-file__custom-file-control"></span>
+                  </label>
+                  <div class="custom-file-container__image-preview__wrapper"><span class="arrow-right">
+                      <svg width="10" height="10">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arrow-right-10"></use>
+                      </svg></span>
+                    <ul class="custom-file-container__image-preview"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="input input-text"><span class="label">VIN</span>
+                <input type="text" name="VIN" placeholder="" required="required"/>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="input input-text"><span class="label">Пробег</span>
+                <input type="text" name="probeg" placeholder="" required="required"/>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="input input-text"><span class="label">Цена в объявлении</span>
+                <input type="text" name="price" placeholder="" required="required"/>
+              </div>
+            </div>
+            <div class="form__field radio-buttons"><span class="label">Торг</span>
+              <label class="radio">
+                <input type="radio" name="torg"/><span class="radio__elem"></span><span class="radio__text">Присутствует</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="torg"/><span class="radio__elem"></span><span class="radio__text">Отсутствует</span>
+              </label>
+            </div>
+            <div class="form__fieldGroup carbody">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Состояние кузова</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="custom-file-container" data-upload-id="MyFile3" data-glide-el="track">
+                  <label class="custom-file-container__label">Изображения<a class="custom-file-container__image-clear" href="javascript:void(0)" title="Clear Image">&times;</a>
+                  </label>
+                  <label class="custom-file-container__custom-file">
+                    <input class="custom-file-container__custom-file__custom-file-input" type="file" accept="image/png, image/jpeg" required="required" name="MyFile3" multiple="" aria-label="Choose File"/>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760"/><span class="custom-file-container__custom-file__custom-file-control"></span>
+                  </label>
+                  <div class="custom-file-container__image-preview__wrapper"><span class="arrow-right">
+                      <svg width="10" height="10">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arrow-right-10"></use>
+                      </svg></span>
+                    <ul class="custom-file-container__image-preview"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас передней правой двери</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Шпаклевка</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас задней правой двери</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Шпаклевка</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас передней правой двери</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас заднего правого крыла</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас передней левой двери</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас задней левой двери </span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас заднего левого крыла</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас переднего бампера</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас заднего бампера</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас крыши</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас капота</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Окрас проемов </span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Замена кузовных элементов</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Потёртости на лкп</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Царапины на лкп</span>
+                </label>
+              </div>
+              <div class="form__field"><span class="label">Заменено стекло</span>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Заднее правое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Заднее левое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Заднее ветровое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Задняя форточка левая</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Задняя форточка правая</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Переднее правое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Переднее левое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Лобовое</span>
+                </label>
+              </div>
+              <div class="form__field"><span class="label">Заменено зеркало заднего вида</span>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Левое</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Правое</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup tech">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Техническая часть</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Запотевание/течь переднего сальника коленвала</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Запотевание/течь заднего сальника коленвала</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Запотевание/течь клапанной крышки</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Течь антифриза</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Нестабильная работа двигателя </span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Износ сцепления </span>
+                </label>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Износ тормозных дисков </span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Сзади </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Спереди</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Износ тормозных колодок</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Сзади </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Спереди</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup kpp">
+              <div class="form__fieldGroupExpand">
+                <div class="name">КПП</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup podveska">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Подвеска автомобиля</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Посторонний стук в подвеске</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Передней </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Задней</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Проблемы с рулевой рейкой </span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Проблемы с приводами </span>
+                </label>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Проблемы с акпп </span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пинки</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Удары </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Вибрация </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Нестабильная работа коробки передач</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Износ кулисы коробки передач</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup system">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Тормозная система</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup wheels">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Колеса</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Повышенный износ резины</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Спереди справа</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Спереди слева</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Сзади справа</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Сзади слева</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Глубина протектора меньше нормы</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Царапины на колёсных дисках</span>
+                </label>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup optional">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Доп. системы</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает кондиционер </span>
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="checkbox">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает печка </span>
+                </label>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает электропривод зеркал</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажир </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Водитель </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает складывание зеркал</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажир </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Водитель </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает подогрев сиденья </span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажир </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Водитель </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field collapse">
+                <label class="checkbox collapse-toggle">
+                  <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Не работает электростеклоподъемник:</span>
+                </label>
+                <div class="collapse-content"> 
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Водителя</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажира сзади слева </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажира сзади справа </span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"/><span class="checkbox__elem"></span><span class="checkbox__text">Пассажира спереди </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup salon">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Салон</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__fieldGroup compute">
+              <div class="form__fieldGroupExpand">
+                <div class="name">Компьютерная диагностика</div>
+                <div class="toggle">
+                  <svg width="20" height="20">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_expand-20"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="textarea"><span class="label">Комментарий</span>
+                  <textarea placeholder="" name="message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__links"><a class="btn btn-round btn-secondary" href="#">Предпросмотр<br> отчета</a><a class="btn btn-round btn-secondary" href="#">Предпросмотр<br> фотоальбома</a></div>
+            <div class="form__btns">
+              <button class="btn btn-round btn-big" type="submit">Отправить отчет</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!--.container
+      .footer
+        .footer-logo
+          .footer-logo__img
+            //- img(src="../img/svg/logo.svg",width="126", height="49", loading="lazy", alt="")
+        .footer-nav
+          ul.footer-nav__ul
+            li
+              a(href="#") Item 1
+            li
+              a(href="#") Item 2
+            li
+              a(href="#") Item 3
+        .footer-feedback
+      -->
+      <div class="status" style="display:none">
+        <div class="status__message"></div>
+        <div class="status__action">Закрыть</div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
