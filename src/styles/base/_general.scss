@@ -1,7 +1,7 @@
 .perf-no-animation * {
-    transition: none!important;
-    -webkit-animation: none!important;
-    animation: none!important;
+    transition: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
 }
 
 html {
@@ -69,31 +69,34 @@ body {
     flex-direction: column;
 }
 
-footer{
+footer {
     width: 100%;
     margin-top: auto;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 830px;
+    max-width: 830px !important;
     padding: 0 50px;
+
     @media screen and (max-width: 1440px) {
         max-width: 100%;
     }
+
     @media screen and (max-width: 1024px) {
         padding: 0 25px;
     }
+
     @media screen and (max-width: 480px) {
         padding: 0 20px;
     }
 }
 
-.buttons{
+.buttons {
     display: flex;
     flex-wrap: wrap;
 
-    .section-h3{
+    .section-h3 {
         width: 100%;
     }
 }

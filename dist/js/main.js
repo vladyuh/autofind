@@ -164,6 +164,28 @@ function initFiles(){
         })
     });
 
+    var arrowRight = document.querySelectorAll('.custom-file-container__image-preview__wrapper .arrow-right');
+    arrowRight.forEach(element => {
+        element.addEventListener('click', function(){
+            var wrapper = this.parentNode;
+            var content = wrapper.querySelector('.custom-file-container__image-preview');
+            var slide = content.querySelector('.custom-file-container__image-multi-preview');
+            content.scrollBy(slide.offsetWidth + 10, 0);
+        })
+        
+    });
+
+    var arrowLeft = document.querySelectorAll('.custom-file-container__image-preview__wrapper .arrow-left');
+    arrowLeft.forEach(element => {
+        element.addEventListener('click', function(){
+            var wrapper = this.parentNode;
+            var content = wrapper.querySelector('.custom-file-container__image-preview');
+            var slide = content.querySelector('.custom-file-container__image-multi-preview');
+            content.scrollBy(-(slide.offsetWidth + 10), 0);
+        })
+        
+    });
+
     window.addEventListener("fileUploadWithPreview:imagesAdded", function (e) {
         var id = e.detail.uploadId;
         var container = document.querySelector("[data-upload-id=" +id +"]");
@@ -175,6 +197,7 @@ function initFiles(){
         var count = e.detail.cachedFileArray;
         if(count.length > 4){
             container.querySelector('.arrow-right').style.display ="flex"; 
+            container.querySelector('.arrow-left').style.display ="flex"; 
         }   
         
     });
@@ -185,6 +208,7 @@ function initFiles(){
         var container = document.querySelector("[data-upload-id=" +id +"]");
         if(count.length <= 4){
             container.querySelector('.arrow-right').style.display ="none"; 
+            container.querySelector('.arrow-left').style.display ="none";
         }               
     });
 }
