@@ -30,9 +30,9 @@ html(lang="ru")
 		link(rel="preload" href="/fonts/FuturaPT-Medium.woff" as="font" type="font/woff" crossorigin)
 		link(rel="preload" href="/fonts/FuturaPT-Bold.woff" as="font" type="font/woff" crossorigin)
 		link(rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin)
-		block styles		
+		block styles
 	body.perf-no-animation.page
-		header
+		header(class=headerClass)
 			block header
 				include ../../blocks/modules/header/header.pug 
 		include ../../blocks/components/mobileMenu/mobileMenu.pug

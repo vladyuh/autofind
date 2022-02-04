@@ -2,9 +2,11 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: 6;
     background: $white;
     width: 100%;
+    position: fixed;
+    padding-top: 52px;
 }
 
 .header {
@@ -14,7 +16,15 @@ header {
     height: 72px;
 
     &-burger {
-        display: block;
+        display: flex;
+        margin-right: auto;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #006BD2;
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 
     &-logo {
@@ -54,20 +64,33 @@ header {
     }
 
     &-account {
+        flex-shrink: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 52px;
         height: 52px;
-        background: #006BD2;
+        background: #fff;
         border: 2px solid #006BD2;
         box-sizing: border-box;
         border-radius: 44px;
+        transition: all 0.25s ease;
+
+        svg path{
+            fill: #006BD2;
+        }
+
+        &:hover{
+            background: #006BD2;
+            svg path{
+                fill: #fff;
+            }
+        }
     }
 }
 
 .header-without-burger {
-    .burger {
+    .header-burger {
         display: none;
     }
 }

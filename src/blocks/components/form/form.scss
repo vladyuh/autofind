@@ -1,10 +1,10 @@
 $font-size: 14px;
 $line-height: 18px;
 $defaultPadding: 10px 14px;
-$paddingWithIcon: 10px 14px 10px 40px;
+$paddingWithIcon: 10px 40px 10px 10px;
 $invalid: red;
 $inputHeight: 40px;
-$iconDimensions: 20px;
+$iconDimensions: 21px;
 
 input,
 textarea {
@@ -53,8 +53,9 @@ textarea {
 
     .icon {
       position: absolute;
-      top: 15px;
-      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 14px;
       display: flex;
       align-items: center;
       width: $iconDimensions;
@@ -95,6 +96,38 @@ textarea {
 
     .select__value {
       padding: $paddingWithIcon !important;
+    }
+  }
+
+  &.center{
+    .select__value{
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .value{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.is-active .value::after{
+        transform: rotate(-180deg);        
+      }
+      .value::after{
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/svg/ic_dropdown-bl.svg);
+        transition: all 0.25s ease;
+        margin-left: 5px;
+      }
+      &::after{
+        display: none;
+      }
     }
   }
 
@@ -230,43 +263,13 @@ textarea {
     }
 
     &Group{
-      &Expand{
-        display: flex;
-        align-items: center;
-        background: #F1EEEE;
-        height: 55px;
-        padding: 12px 27px 12px 12px;
-        margin-bottom: 10px;
-        .name{
-          margin-right: auto;
-          padding-right: 16px;
-          font-size: 14px;
-          font-weight: 600;
-        }
-        .toggle{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.25s ease;
-          cursor: pointer;
-          &.is-active{
-            transform: rotate(-45deg);
-          }
-        }
-      }
-      .form__field{
-        height: 0;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-        transition: opacity 0.25s ease;   
-        opacity: 0;  
-      }
       &.is-active .form__field{
-        opacity: 1;
-        height: auto;
         border-bottom: 1px solid #DADADA;
         padding-bottom: 10px; 
+        &:last-child{
+          padding-bottom: 0;
+          border-bottom: 0;
+        }
       }
     }
 
@@ -301,7 +304,7 @@ textarea {
   &__btns{
     display: flex;
     .btn{
-      width: 100%;
+      flex-grow: 1;
     }
   }
 }

@@ -1,18 +1,30 @@
 .mobileMenu {
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     transform: translateX(-100%);
-    width: 300px;
-    background: #eee;
+    width: 100%;
+    background: #fff;
     transition: transform 0.3s ease;
-    overflow-y: scroll;
-    z-index: 1001;
+    z-index: 5;
+    padding-top: 224px;
+    padding-bottom: 35px;
+    overscroll-behavior: contain;
+    overflow-y: auto;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+    }
+
     &.opened {
         transform: translateX(0);
     }
+
     &-header {
         &__toggle {
             display: flex;
@@ -20,17 +32,73 @@
             height: 69px;
         }
     }
+
     &-nav {
+        padding: 10px 0 24px;
+
         &__ul li {
             font-size: 18px;
             line-height: 120%;
-            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        &__ul a {
+            display: inline-block;
+
+            &[data-count]::after {
+                content: attr(data-count);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 100%;
+                padding: 6px;
+                background: #006BD2;
+                border-radius: 44px;
+                min-width: 21px;
+                height: 21px;
+                color: #fff;
+                box-sizing: border-box;
+                margin-left: 10px;
+            }
         }
     }
-}
 
-@media screen and (max-width: 1024px) {
-    .mobileMenu {
-        display: block;
+    &-footer {
+        margin-top: auto;
+
+        &__info {
+            padding: 25px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                font-size: 18px;
+                text-align: center;
+                color: #9E9E9E;
+                margin-bottom: 18px;
+            }
+
+            a{
+                font-size: 24px;
+                line-height: 31px;
+            }
+        }
+
+        &__logout {
+            margin-top: 35px;
+        }
+
+        &__logout a {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-left: 17px;
+            }
+        }
     }
 }

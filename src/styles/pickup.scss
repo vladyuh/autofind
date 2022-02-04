@@ -1,0 +1,88 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.clients{
+  display: flex;
+  flex-grow: 1;
+
+  min-height: calc(100vh - 124px);
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__sort{
+    .value{
+      font-size: 18px;
+    }    
+  }
+
+  &__item{
+    padding: 20px 0 25px;
+    border-bottom: 1px solid #9E9E9E;
+    position: relative;
+
+    .title{
+      margin-bottom: 8px;
+      padding-right: 20px;
+    }
+
+    .edit{
+      position: absolute;
+      top: 22px;
+      right: 0;
+    }
+
+    .info-list{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      .value{
+        padding-left: 8px;
+        text-align: right;
+      }
+    }
+
+    .info-view{
+      margin-top: 20px;
+      display: inline-flex;
+      min-width: 160px;
+    }
+
+  }
+
+  &__btns{
+    padding-top: 25px;
+    margin-top: auto;    
+  }
+
+  &__add{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__edit{
+    .form__btns{
+      flex-direction: column;
+    }
+  }
+
+  .remove-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding: 12px;
+
+    span{
+      margin-left: 14px;
+    }
+  }
+
+}

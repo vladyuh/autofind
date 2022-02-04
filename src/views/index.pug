@@ -8,7 +8,8 @@ include ../blocks/components/headers/headers.pug
 
 
 block variables
-    - const title = "Отчет об авто"
+    - const title = "Отчет об авто";
+    - const headerClass = "header-without-burger";
 
 block styles
     link(rel="stylesheet" href="/styles/report.css")
@@ -105,598 +106,607 @@ block content
                         check: false,
                         name: "torg",                        
                     })
-                .form__fieldGroup.carbody
-                    .form__fieldGroupExpand
+                .form__fieldGroup.carbody.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Состояние кузова
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +input-fileUploadImage({
-                            id: "MyFile3",
-                            label: "Изображения"
-                        })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Окрас передней правой двери',
-                        disabled: false,
-                        check: false,
-                        name: "okras",
-                        })
-                        .collapse-content 
-                            +checkbox({
-                                label: 'Шпаклевка',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka",
+                    .accordion__content
+                        .form__field
+                            +input-fileUploadImage({
+                                id: "MyFile3",
+                                label: "Изображения"
                             })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Окрас задней правой двери',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                        .collapse-content 
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Шпаклевка',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Окрас передней правой двери',
+                            disabled: false,
+                            check: false,
+                            name: "okras",
                             })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас передней правой двери',
-                        disabled: false,
-                        check: false,
-                        name: "okras_peredney_pravoy",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас заднего правого крыла',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас передней левой двери',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас задней левой двери ',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас заднего левого крыла',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас переднего бампера',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас заднего бампера',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас крыши',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас капота',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Окрас проемов ',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Замена кузовных элементов',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Потёртости на лкп',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        +checkbox({
-                        label: 'Царапины на лкп',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                    .form__field
-                        span.label Заменено стекло
-                        +checkbox({
-                        label: 'Заднее правое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Заднее левое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Заднее ветровое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Задняя форточка левая',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Задняя форточка правая',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Переднее правое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Переднее левое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                        +checkbox({
-                        label: 'Лобовое',
-                        disabled: false,
-                        check: false,
-                        name: "glass",
-                        })
-                    .form__field
-                        span.label Заменено зеркало заднего вида
-                        +checkbox({
-                        label: 'Левое',
-                        disabled: false,
-                        check: false,
-                        name: "glass_zadnee",
-                        })
-                        +checkbox({
-                        label: 'Правое',
-                        disabled: false,
-                        check: false,
-                        name: "glass_zadnee",
-                        })
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
-                .form__fieldGroup.tech
-                    .form__fieldGroupExpand
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Шпаклевка',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka",
+                                })
+                        .form__field.collapse
+                            +checkbox({
+                            class: "collapse-toggle",
+                            label: 'Окрас задней правой двери',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Шпаклевка',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас передней правой двери',
+                            disabled: false,
+                            check: false,
+                            name: "okras_peredney_pravoy",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас заднего правого крыла',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас передней левой двери',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас задней левой двери ',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас заднего левого крыла',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас переднего бампера',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас заднего бампера',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас крыши',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас капота',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Окрас проемов ',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Замена кузовных элементов',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Потёртости на лкп',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            +checkbox({
+                            label: 'Царапины на лкп',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                        .form__field
+                            span.label Заменено стекло
+                            +checkbox({
+                            label: 'Заднее правое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Заднее левое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Заднее ветровое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Задняя форточка левая',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Задняя форточка правая',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Переднее правое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Переднее левое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                            +checkbox({
+                            label: 'Лобовое',
+                            disabled: false,
+                            check: false,
+                            name: "glass",
+                            })
+                        .form__field
+                            span.label Заменено зеркало заднего вида
+                            +checkbox({
+                            label: 'Левое',
+                            disabled: false,
+                            check: false,
+                            name: "glass_zadnee",
+                            })
+                            +checkbox({
+                            label: 'Правое',
+                            disabled: false,
+                            check: false,
+                            name: "glass_zadnee",
+                            })
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.tech.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Техническая часть
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +checkbox({
-                        label: 'Запотевание/течь переднего сальника коленвала',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Запотевание/течь заднего сальника коленвала',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Запотевание/течь клапанной крышки',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Течь антифриза',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Нестабильная работа двигателя ',
-                        disabled: false,
-                        check: false,
-                    })                    
-                    .form__field
-                        +checkbox({
-                        label: 'Износ сцепления ',
-                        disabled: false,
-                        check: false,
-                    })                    
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Износ тормозных дисков ',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                    .accordion__content
+                        .form__field
+                            +checkbox({
+                            label: 'Запотевание/течь переднего сальника коленвала',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field
                             +checkbox({
-                                label: 'Сзади ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Спереди',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Износ тормозных колодок',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                            label: 'Запотевание/течь заднего сальника коленвала',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field
                             +checkbox({
-                                label: 'Сзади ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
+                            label: 'Запотевание/течь клапанной крышки',
+                            disabled: false,
+                            check: false,
+                        })
+                        .form__field
                             +checkbox({
-                                label: 'Спереди',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            label: 'Течь антифриза',
+                            disabled: false,
+                            check: false,
+                        })
+                        .form__field
+                            +checkbox({
+                            label: 'Нестабильная работа двигателя ',
+                            disabled: false,
+                            check: false,
+                        })                    
+                        .form__field
+                            +checkbox({
+                            label: 'Износ сцепления ',
+                            disabled: false,
+                            check: false,
+                        })                    
+                        .form__field.collapse
+                            +checkbox({
+                            class: "collapse-toggle",
+                            label: 'Износ тормозных дисков ',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })      
-                .form__fieldGroup.kpp
-                    .form__fieldGroupExpand
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Сзади ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Спереди',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field.collapse
+                            +checkbox({
+                            class: "collapse-toggle",
+                            label: 'Износ тормозных колодок',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Сзади ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Спереди',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })      
+                .form__fieldGroup.kpp.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name КПП
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
-                .form__fieldGroup.podveska
-                    .form__fieldGroupExpand
+                    .accordion__content
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.podveska.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Подвеска автомобиля
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Посторонний стук в подвеске',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                    .accordion__content
+                        .form__field.collapse
+                            +checkbox({
+                            class: "collapse-toggle",
+                            label: 'Посторонний стук в подвеске',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Передней ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Задней',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
+                            +checkbox({
+                            label: 'Проблемы с рулевой рейкой ',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field
                             +checkbox({
-                                label: 'Передней ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Задней',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field
-                        +checkbox({
-                        label: 'Проблемы с рулевой рейкой ',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Проблемы с приводами ',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Проблемы с акпп ',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                            label: 'Проблемы с приводами ',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Пинки',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Проблемы с акпп ',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Пинки',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Удары ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Вибрация ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
                             +checkbox({
-                                label: 'Удары ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Вибрация ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field
-                        +checkbox({
-                        label: 'Нестабильная работа коробки передач',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Износ кулисы коробки передач',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
+                            label: 'Нестабильная работа коробки передач',
+                            disabled: false,
+                            check: false,
                         })
-                .form__fieldGroup.system
-                    .form__fieldGroupExpand
+                        .form__field
+                            +checkbox({
+                            label: 'Износ кулисы коробки передач',
+                            disabled: false,
+                            check: false,
+                        })
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.system.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Тормозная система
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
-                .form__fieldGroup.wheels
-                    .form__fieldGroupExpand
+                    .accordion__content
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.wheels.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Колеса
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Повышенный износ резины',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                    .accordion__content
+                        .form__field.collapse
+                            +checkbox({
+                            class: "collapse-toggle",
+                            label: 'Повышенный износ резины',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
+                            })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Спереди справа',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Спереди слева',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Сзади справа',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Сзади слева',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
+                            +checkbox({
+                            label: 'Глубина протектора меньше нормы',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field
                             +checkbox({
-                                label: 'Спереди справа',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Спереди слева',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Сзади справа',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Сзади слева',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field
-                        +checkbox({
-                        label: 'Глубина протектора меньше нормы',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Царапины на колёсных дисках',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
+                            label: 'Царапины на колёсных дисках',
+                            disabled: false,
+                            check: false,
                         })
-                .form__fieldGroup.optional
-                    .form__fieldGroupExpand
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.optional.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Доп. системы
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +checkbox({
-                        label: 'Не работает кондиционер ',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field
-                        +checkbox({
-                        label: 'Не работает печка ',
-                        disabled: false,
-                        check: false,
-                    })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Не работает электропривод зеркал',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                    .accordion__content
+                        .form__field
+                            +checkbox({
+                            label: 'Не работает кондиционер ',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field
                             +checkbox({
-                                label: 'Пассажир ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Водитель ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Не работает складывание зеркал',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
+                            label: 'Не работает печка ',
+                            disabled: false,
+                            check: false,
                         })
-                        .collapse-content 
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Пассажир ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Не работает электропривод зеркал',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Пассажир ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Водитель ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Водитель ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Не работает складывание зеркал',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Не работает подогрев сиденья ',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                        .collapse-content 
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Пассажир ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Водитель ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Пассажир ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Не работает подогрев сиденья ',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Пассажир ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Водитель ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field.collapse
                             +checkbox({
-                                label: 'Водитель ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            class: "collapse-toggle",
+                            label: 'Не работает электростеклоподъемник:',
+                            disabled: false,
+                            check: false,
+                            name: "okras_zadney",
                             })
-                    .form__field.collapse
-                        +checkbox({
-                        class: "collapse-toggle",
-                        label: 'Не работает электростеклоподъемник:',
-                        disabled: false,
-                        check: false,
-                        name: "okras_zadney",
-                        })
-                        .collapse-content 
-                            +checkbox({
-                                label: 'Водителя',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
+                            .collapse-content 
+                                +checkbox({
+                                    label: 'Водителя',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Пассажира сзади слева ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Пассажира сзади справа ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                                +checkbox({
+                                    label: 'Пассажира спереди ',
+                                    disabled: false,
+                                    check: false,
+                                    name: "shpaklevka_zadney",
+                                })
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
                             })
-                            +checkbox({
-                                label: 'Пассажира сзади слева ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Пассажира сзади справа ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                            +checkbox({
-                                label: 'Пассажира спереди ',
-                                disabled: false,
-                                check: false,
-                                name: "shpaklevka_zadney",
-                            })
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
-                .form__fieldGroup.salon
-                    .form__fieldGroupExpand
+                .form__fieldGroup.salon.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Салон
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
-                .form__fieldGroup.compute
-                    .form__fieldGroupExpand
+                    .accordion__content
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
+                .form__fieldGroup.compute.accordion
+                    .form__fieldGroupExpand.accordion__expand
                         .name Компьютерная диагностика
                         .toggle: +icons('#ic_expand-20',20)
-                    .form__field
-                        +textarea({
-                            name: "message",
-                            placeholder: '',
-                            label: "Комментарий",
-                            required: false,
-                        })
+                    .accordion__content
+                        .form__field
+                            +textarea({
+                                name: "message",
+                                placeholder: '',
+                                label: "Комментарий",
+                                required: false,
+                            })
                 .form__links
                     a.btn.btn-round.btn-secondary(href="#") Предпросмотр<br> отчета
                     a.btn.btn-round.btn-secondary(href="#") Предпросмотр<br> фотоальбома

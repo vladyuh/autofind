@@ -41,7 +41,7 @@ mixin textarea-icon(data)
         textarea(placeholder=data.placeholder, name=data.name)
 //- select
 mixin selectCustom(data)
-  .select
+  .select(class=data.class)
     if data.label 
       span.label=data.label
     .select__value

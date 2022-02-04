@@ -1,14 +1,26 @@
 include ../../components/burger/burger
 .mobileMenu
   .container
-    .mobileMenu-header
-      .mobileMenu-header__toggle
-        +burger('open')
+    .mobileMenu-search
+      form(action="")
+        .form__field
+          +input-icon({
+          type: 'search',
+          placeholder: 'Поиск',
+          label: false,
+          required: false,
+          icon: "#ic_search",
+        })
     .mobileMenu-nav
       ul.mobileMenu-nav__ul
-        li: a(href="/styleguide.html#breadcrumbs") Breadcrumbs
-        li: a(href="/styleguide.html#buttons") Buttons
-        li: a(href="/styleguide.html#textfields") Text fields
-        li: a(href="/styleguide.html#radio") Radio
-        li: a(href="/styleguide.html#editcontent") Edit text
+        li: a(href="moderate.html" data-count="3") Заявки на модерации
+        li: a(href="pickup.html") Подборщики
+        li: a(href="clients.html") Клиенты
+        li: a(href="history.html") История
     .mobileMenu-footer
+        .mobileMenu-footer__btns
+          a(href="make-request.html").btn.btn-round.btn-big Добавить заявку
+        .mobileMenu-footer__logout
+          a(href="#")
+            +icons('#ic_close',28)
+            span Выйти

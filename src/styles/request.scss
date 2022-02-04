@@ -1,0 +1,85 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.request{
+  display: flex;
+  flex-grow: 1;
+  min-height: calc(100vh - 124px);
+
+  &.pickup-request{
+    .request__itemImage .image{
+      border-radius: 0;
+    }
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__sort{
+    .value{
+      font-size: 18px;
+    }    
+  }
+
+  &__item{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #9E9E9E;
+    padding: 20px 0;
+
+    &Image{
+      flex-shrink: 0;
+      width: 100px;
+      .image{
+        position: relative;
+        padding-top: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &List{
+      padding-left: 16px;
+      flex-grow: 1;
+      position: relative;
+      .title{
+        padding-right: 20px;
+        margin-bottom: 8px;
+      }
+      .edit{
+        position: absolute;
+        top: 2px;
+        right: 0;
+      }
+      .list-item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .value{
+        padding-left: 8px;
+        text-align: right;
+      }
+    }
+  }
+
+  &__btns{
+    padding-top: 25px;
+    margin-top: auto;    
+  }
+
+}

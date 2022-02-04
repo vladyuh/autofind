@@ -1,0 +1,59 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+
+block variables
+  - const title = "Подборщики";
+
+block styles
+  link(rel="stylesheet" href="/styles/pickup.css")
+
+block content
+  section.clients
+    .container
+      .section-h2 Подборщики
+      form.clients__search
+        .form__field
+          +input-icon({
+          type: 'search',
+          placeholder: 'Поиск',
+          label: false,
+          required: false,
+          icon: "#ic_search",
+        })
+      form.clients__sort
+        .form__field
+          +selectCustom({
+            class: "center",
+            placeholder: "Сортировка: по алфавиту",
+            label: "",
+            data: ['Сортировка: по алфавиту','Сортировка: по дaте'],
+            required: true,
+            name: "sort",
+          })
+      .clients__items
+        .clients__item
+          .title.section-h3 Иванов Сергей<br> Петрович
+          a(href="edit-pickup.html").edit: +icons('#ic_edit', 19)
+          .info-list
+            .name Город:
+            .value Гомель
+          .info-list
+            .name Телефон:
+            .value: a(href="tel:+375374984858") <strong>+375 (37) 498 48 58</strong>
+        .clients__item
+          .title.section-h3 Иванов Сергей<br> Петрович
+          a(href="edit-pickup.html").edit: +icons('#ic_edit', 19)
+          .info-list
+            .name Город:
+            .value Гомель
+          .info-list
+            .name Телефон:
+            .value: a(href="tel:+375374984858") <strong>+375 (37) 498 48 58</strong>
+      .clients__btns
+        a.btn.btn-round.btn-big(href="add-pickup.html") Добавить подборщика
+block scripts
+  script(src="/js/main.js")

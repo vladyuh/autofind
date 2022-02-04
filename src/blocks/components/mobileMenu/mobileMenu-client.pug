@@ -1,0 +1,25 @@
+include ../../components/burger/burger
+.mobileMenu
+  .container
+    .mobileMenu-search
+      form(action="")
+        .form__field
+          +input-icon({
+          type: 'search',
+          placeholder: 'Поиск',
+          label: false,
+          required: false,
+          icon: "#ic_search",
+        })
+    .mobileMenu-nav
+      ul.mobileMenu-nav__ul
+    .mobileMenu-footer
+      .mobileMenu-footer__info
+        span Заказать автоподбор можно по телефону
+        a(href="tel:+375 29 475 38 38") <strong>+375 29 475 38 38</strong>
+      .mobileMenu-footer__btns
+        a(href="#").btn.btn-round.btn-big Заказать подбор
+      .mobileMenu-footer__logout
+        a(href="#")
+          +icons('#ic_close',28)
+          span Выйти

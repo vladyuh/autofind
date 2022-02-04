@@ -1,6 +1,6 @@
 $width: 24px;
-$height: 19px;
-$stroke: 3px;
+$height: 18px;
+$stroke: 2px;
 
 .burger {
   width: $width;
@@ -22,7 +22,7 @@ $stroke: 3px;
   position: absolute;
   height: $stroke;
   width: 100%;
-  background: #000;
+  background: #2E2B28;
   border-radius: $stroke;
   opacity: 1;
   left: 0;

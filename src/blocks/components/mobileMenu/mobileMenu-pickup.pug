@@ -1,0 +1,23 @@
+include ../../components/burger/burger
+.mobileMenu
+  .container
+    .mobileMenu-search
+      form(action="")
+        .form__field
+          +input-icon({
+          type: 'search',
+          placeholder: 'Поиск',
+          label: false,
+          required: false,
+          icon: "#ic_search",
+        })
+    .mobileMenu-nav
+      ul.mobileMenu-nav__ul
+        li: a(href="pickup-request.html" data-count="2") Новые заявки
+        li: a(href="pickup-history.html") История
+    .mobileMenu-footer
+        .mobileMenu-footer__btns
+        .mobileMenu-footer__logout
+          a(href="#")
+            +icons('#ic_close',28)
+            span Выйти

@@ -1,0 +1,135 @@
+extends ../layouts/client
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+
+block variables
+  - const title = "Предпросмотр отчета";
+
+block styles
+    link(rel="stylesheet" href="/styles/preview.css")
+
+block content
+  section.preview
+    .container
+      .section-h2 Ford GaLaxy 2,<br> 2010, 2.0 дизель
+      .preview__date 14.03.2022    -    Семен Иванов
+      .preview__actions
+        a.btn.btn-round.btn-secondary(href="#") Скачать PDF
+        a.btn.btn-round.btn-secondary(href="#") Фотоальбом
+      .preview__notification Данные актуальны на момент просмотра
+      .preview__data
+        .preview__item
+          .name Документы: тех. паспорт
+          .value
+        .preview__item
+          .name VIN
+          .value WFOGXXPSSGYE05018
+        .preview__item
+          .name Пробег
+          .value 244000 км  
+        .preview__item
+          .name  Цена в объявлении: 
+          .value 9800$
+        .preview__item
+          .name Торг:
+          .value присутствует
+        .preview__slider
+          .glide__preview: .image: img(data-src="/img/report/image-1Big.jpg" loading="lazy" class="lazyload")
+          .glide__track(data-glide-el="track")
+            ul.glide__slides
+              li.glide__slide: .image: img(data-src="/img/report/image-1Big.jpg" loading="lazy" class="lazyload")
+              li.glide__slide: .image: img(data-src="/img/report/image-1.jpg" loading="lazy" class="lazyload")
+              li.glide__slide: .image: img(data-src="/img/report/image-2.jpg" loading="lazy" class="lazyload") 
+              li.glide__slide: .image: img(data-src="/img/report/image-3.jpg" loading="lazy" class="lazyload")
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Состояние кузова
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Крашеные элементы: 
+                .value переднее правое крыло, крышка багажника, заднее левое крыло и переднее левое подкрашено.
+              .preview__item
+                .name Шпатлеванные элементы: 
+                .value имеется шпатлёвка на заднем левом крыле.
+              .preview__item
+                .name Наличие коррозии: 
+                .value множество жучков.
+              .preview__item
+                .name Царапины, вмятины, сколы:
+                .value сколы и царапины имеются в большом количестве.
+              .preview__item
+                .name Фары/стекла:
+                .value Лобовое с небольшой трещиной, множество сколов, фары целые.
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Техническая часть автомобиля
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name КПП
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Подвеска автомобиля
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Тормозная система
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Колеса
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Доп. системы
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Салон
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+        .preview__itemGroup.accordion
+            .preview__itemGroupExpand.accordion__expand
+              .name Компьютерная диагностика
+              .toggle: +icons('#ic_expand-20',20)
+            .accordion__content
+              .preview__item
+                .name Комментарий:
+                .value
+block scripts
+  script(src="/js/main.js")

@@ -22,13 +22,18 @@
     border: 2px solid #006BD2;
     background: #fff;
     color: #006BD2;
-    height: 57px;
+    min-height: 40px;
+    transition: all 0.25s ease;
+    &:hover{
+      background: #006BD2;
+      color: #fff;
+    }
   }
 
   &-big {
-    height: 66px;
+    min-height: 66px;
     font-size: 18px;
-    line-height: 271.7%;
+    line-height: 21px;
   }
 
   &-link {
