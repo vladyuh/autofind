@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Заявки клиента</title>
+    <title>Мои заявки</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -64,15 +64,11 @@
           </form>
         </div>
         <div class="mobileMenu-nav">
-          <ul class="mobileMenu-nav__ul">
-            <li><a href="moderate.html" data-count="3">Заявки на модерации</a></li>
-            <li><a href="pickup.html">Подборщики</a></li>
-            <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="history.html">История</a></li>
-          </ul>
+          <ul class="mobileMenu-nav__ul"></ul>
         </div>
         <div class="mobileMenu-footer">
-          <div class="mobileMenu-footer__btns"><a class="btn btn-round btn-big" href="make-request.html">Добавить заявку</a></div>
+          <div class="mobileMenu-footer__info"><span>Заказать автоподбор можно по телефону</span><a href="tel:+375 29 475 38 38"><strong>+375 29 475 38 38</strong></a></div>
+          <div class="mobileMenu-footer__btns"><a class="btn btn-round btn-big" href="#">Заказать подбор</a></div>
           <div class="mobileMenu-footer__logout"><a href="#">
               <svg width="28" height="28">
                 <use xlink:href="/img/sprites/sprite.svg#ic_close"></use>
@@ -83,7 +79,7 @@
     <main>
       <section class="request">
         <div class="container">
-          <div class="section-h2">Иванов Сергей Петрович</div>
+          <div class="section-h2">Мои заявки</div>
           <form class="request__search">
             <div class="form__field">
               <div class="input input-search input-icon">
@@ -113,19 +109,15 @@
               </div>
             </div>
           </form>
-          <div class="request__items">
-            <div class="request__item">
+          <div class="request__items"><a class="request__item" href="client-view.html">
               <div class="request__itemImage">
                 <div class="image"><img src="/img/common/request.jpg"></div>
               </div>
               <div class="request__itemList">
-                <div class="title section-h3">Ford GaLaxy 2, 2010</div><a class="edit" href="#">
-                  <svg width="19" height="19">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
-                  </svg></a>
+                <div class="title section-h3">Ford GaLaxy 2, 2010</div>
                 <div class="list-item">
                   <div class="name">Клиент:</div>
-                  <div class="value">Иванов Сергей</div>
+                  <div class="value">Иван Петров</div>
                 </div>
                 <div class="list-item">
                   <div class="name">Город:</div>
@@ -147,20 +139,15 @@
                   <div class="name">Цена:</div>
                   <div class="value"><strong>9800$</strong></div>
                 </div>
-              </div>
-            </div>
-            <div class="request__item">
+              </div></a><a class="request__item" href="client-view.html">
               <div class="request__itemImage">
                 <div class="image"><img src="/img/common/request.jpg"></div>
               </div>
               <div class="request__itemList">
-                <div class="title section-h3">Ford GaLaxy 2, 2010</div><a class="edit" href="#">
-                  <svg width="19" height="19">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
-                  </svg></a>
+                <div class="title section-h3">Ford GaLaxy 2, 2010</div>
                 <div class="list-item">
                   <div class="name">Клиент:</div>
-                  <div class="value">Иванов Сергей</div>
+                  <div class="value">Иван Петров</div>
                 </div>
                 <div class="list-item">
                   <div class="name">Город:</div>
@@ -182,10 +169,7 @@
                   <div class="name">Цена:</div>
                   <div class="value"><strong>9800$</strong></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="request__btns"><a class="btn btn-round btn-big" href="make-request.html">Добавить заявку</a></div>
+              </div></a></div>
         </div>
       </section>
     </main>

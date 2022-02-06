@@ -1,4 +1,4 @@
-extends ../layouts/client
+extends ../layouts/default
 include ../helpers/mixins
 include ../../blocks/components/breadcrumbs/breadcrumbs.pug
 include ../../blocks/components/form/form.pug
@@ -6,7 +6,7 @@ include ../../blocks/components/checkbox/checkbox.pug
 include ../../blocks/components/headers/headers.pug
 
 block variables
-  - const title = "Мои заявки";
+  - const title = "Заявки клиента";
 
 block styles
   link(rel="stylesheet" href="/styles/request.css")
@@ -14,7 +14,7 @@ block styles
 block content
   section.request
     .container
-      .section-h2 Мои заявки
+      .section-h2 Иванов Сергей Петрович
       form.request__search
         .form__field
           +input-icon({
@@ -35,14 +35,15 @@ block content
             name: "sort",
           })
       .request__items
-        a(href="client-view.html").request__item
+        .request__item
           .request__itemImage
             .image: img(src="/img/common/request.jpg")
           .request__itemList
             .title.section-h3 Ford GaLaxy 2, 2010
+            a(href="#").edit: +icons('#ic_edit', 19)
             .list-item
               .name Клиент:
-              .value Иван Петров
+              .value Иванов Сергей
             .list-item
               .name Город:
               .value Гомель
@@ -58,14 +59,15 @@ block content
             .list-item
               .name Цена:
               .value: strong 9800$
-        a(href="client-view.html").request__item
+        .request__item
             .request__itemImage
               .image: img(src="/img/common/request.jpg")
             .request__itemList
               .title.section-h3 Ford GaLaxy 2, 2010
+              a(href="#").edit: +icons('#ic_edit', 19)
               .list-item
                 .name Клиент:
-                .value Иван Петров
+                .value Иванов Сергей
               .list-item
                 .name Город:
                 .value Гомель
@@ -81,5 +83,7 @@ block content
               .list-item
                 .name Цена:
                 .value: strong 9800$
+      .request__btns
+        a(class="btn btn-round btn-big" href="admin-make-request.html") Добавить заявку
 block scripts
   script(src="/js/main.js")

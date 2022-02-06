@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Клиенты</title>
+    <title>Заявки клиента</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -28,7 +28,7 @@
     <link rel="preload" href="/fonts/FuturaPT-Medium.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="/fonts/FuturaPT-Bold.woff" as="font" type="font/woff" crossorigin>
     <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
-    <link rel="stylesheet" href="/styles/pickup.min.css">
+    <link rel="stylesheet" href="/styles/request.min.css">
   </head>
   <body class="perf-no-animation page">
     <header>
@@ -81,10 +81,10 @@
       </div>
     </div>
     <main>
-      <section class="clients">
+      <section class="request">
         <div class="container">
-          <div class="section-h2">Клиенты</div>
-          <form class="clients__search">
+          <div class="section-h2">Иванов Сергей Петрович</div>
+          <form class="request__search">
             <div class="form__field">
               <div class="input input-search input-icon">
                 <div class="input-icon__wrap"><span class="icon">
@@ -96,54 +96,96 @@
               </div>
             </div>
           </form>
-          <form class="clients__sort">
+          <form class="request__sort">
             <div class="form__field">
               <div class="select center">
                 <div class="select__value">
-                  <div class="value">Сортировка: по алфавиту</div>
+                  <div class="value">Сортировка: по дате</div>
                   <div class="select__dropdown" data-title="">
-                    <label><span>Сортировка: по алфавиту</span>
-                      <input type="radio" name="sort" value="Сортировка: по алфавиту" required="required"/>
+                    <label><span>Сортировка: по дате</span>
+                      <input type="radio" name="sort" value="Сортировка: по дате" required="required"/>
                     </label>
-                    <label><span>Сортировка: по дaте</span>
-                      <input type="radio" name="sort" value="Сортировка: по дaте" required="required"/>
+                    <label><span>Сортировка: по маркам</span>
+                      <input type="radio" name="sort" value="Сортировка: по маркам" required="required"/>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
           </form>
-          <div class="clients__items">
-            <div class="clients__item">
-              <div class="title section-h3">Иванов Сергей<br> Петрович</div><a class="edit" href="edit-client.html">
-                <svg width="19" height="19">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
-                </svg></a>
-              <div class="info-list">
-                <div class="name">Город:</div>
-                <div class="value">Гомель</div>
+          <div class="request__items">
+            <div class="request__item">
+              <div class="request__itemImage">
+                <div class="image"><img src="/img/common/request.jpg"></div>
               </div>
-              <div class="info-list">
-                <div class="name">Телефон:</div>
-                <div class="value"><a href="tel:+375374984858"><strong>+375 (37) 498 48 58</strong></a></div>
-              </div><a class="btn btn-round btn-secondary info-view" href="client-request.html">Смотреть заявки</a>
+              <div class="request__itemList">
+                <div class="title section-h3">Ford GaLaxy 2, 2010</div><a class="edit" href="#">
+                  <svg width="19" height="19">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
+                  </svg></a>
+                <div class="list-item">
+                  <div class="name">Клиент:</div>
+                  <div class="value">Иванов Сергей</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Город:</div>
+                  <div class="value">Гомель</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Подборщик:</div>
+                  <div class="value">Сергей Семенов</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Номер заявки:</div>
+                  <div class="value">32455</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Дата добавления :</div>
+                  <div class="value">01.12.2022</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Цена:</div>
+                  <div class="value"><strong>9800$</strong></div>
+                </div>
+              </div>
             </div>
-            <div class="clients__item">
-              <div class="title section-h3">Иванов Сергей<br> Петрович</div><a class="edit" href="edit-client.html">
-                <svg width="19" height="19">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
-                </svg></a>
-              <div class="info-list">
-                <div class="name">Город:</div>
-                <div class="value">Гомель</div>
+            <div class="request__item">
+              <div class="request__itemImage">
+                <div class="image"><img src="/img/common/request.jpg"></div>
               </div>
-              <div class="info-list">
-                <div class="name">Телефон:</div>
-                <div class="value"><a href="tel:+375374984858"><strong>+375 (37) 498 48 58</strong></a></div>
-              </div><a class="btn btn-round btn-secondary info-view" href="client-request.html">Смотреть заявки</a>
+              <div class="request__itemList">
+                <div class="title section-h3">Ford GaLaxy 2, 2010</div><a class="edit" href="#">
+                  <svg width="19" height="19">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_edit"></use>
+                  </svg></a>
+                <div class="list-item">
+                  <div class="name">Клиент:</div>
+                  <div class="value">Иванов Сергей</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Город:</div>
+                  <div class="value">Гомель</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Подборщик:</div>
+                  <div class="value">Сергей Семенов</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Номер заявки:</div>
+                  <div class="value">32455</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Дата добавления :</div>
+                  <div class="value">01.12.2022</div>
+                </div>
+                <div class="list-item">
+                  <div class="name">Цена:</div>
+                  <div class="value"><strong>9800$</strong></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="clients__btns"><a class="btn btn-round btn-big" href="add-client.html">Добавить клиента</a></div>
+          <div class="request__btns"><a class="btn btn-round btn-big" href="admin-make-request.html">Добавить заявку</a></div>
         </div>
       </section>
     </main>
