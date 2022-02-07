@@ -16,3 +16,70 @@ footer {
         }
     }
 }
+
+.popup-colors {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 9px 30px 30px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+
+    &__close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 51px;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 375px;
+  
+    }
+  
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+  
+      .color {
+        width: 47.15px;
+        height: 47.15px;
+        border-radius: 50%;
+        margin-bottom: 9px;
+      }
+  
+      .desc {
+        font-size: 14px;
+        line-height: 111.2%;
+        text-align: center;
+        color: #000000;
+      }
+    }
+  }
+
+  .undo{
+    margin-top: 20px;
+    width: 100%;
+  }

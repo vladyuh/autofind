@@ -8,26 +8,50 @@ section {
     padding-top: 10px;
 
 
-    .custom-file-container{
+    .custom-file-container {
       margin-top: 4px;
     }
 
-    .textarea{
+    .textarea {
       margin: 8px 0 10px;
     }
 
 
-    .form__links{
+    .form__links {
       margin: 20px 0 12px;
-      .btn{
+
+      .btn {
         height: 57px;
       }
     }
 
   }
 
-  &.make-request{
+  &.make-request {
     padding-top: 30px;
-  } 
+  }
+
+  .car-details__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      max-width: 247px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    svg path{
+      pointer-events: none;
+    }
+
+    svg path[data-name] {
+      pointer-events: all;
+      cursor: pointer;
+    }
+  }
 
 }

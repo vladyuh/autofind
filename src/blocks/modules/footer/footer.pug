@@ -12,6 +12,21 @@
         li
           a(href="#") Item 3
     .footer-feedback
+.popup-colors
+  .popup-colors__close
+    +icons('#ic_close-gray',16)
+  .popup-colors__title
+  .popup-colors__items
+    .popup-colors__item(data-color="#B3F196")
+      .color(style="background:#B3F196")
+      .desc 0 - 200 <br>микрон
+    .popup-colors__item(data-color="#F6DD85")
+      .color(style="background:#F6DD85")
+      .desc 300 - 500 <br>микрон
+    .popup-colors__item(data-color="#DC8E8E")
+      .color(style="background:#DC8E8E")
+      .desc 500 + <br>микрон
+  .undo.btn.btn-round(style="display:none") Отменить окрас
 .status(style="display:none")
   .status__message
   .status__action Закрыть

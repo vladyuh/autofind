@@ -65,14 +65,14 @@
         </div>
         <div class="mobileMenu-nav">
           <ul class="mobileMenu-nav__ul">
-            <li><a href="moderate.html" data-count="3">Заявки на модерации</a></li>
-            <li><a href="pickup.html">Подборщики</a></li>
-            <li><a href="clients.html">Клиенты</a></li>
-            <li><a href="history.html">История</a></li>
+            <li><a href="admin-moderate.html" data-count="3">Заявки на модерации</a></li>
+            <li><a href="admin-pickup.html">Подборщики</a></li>
+            <li><a href="admin-clients.html">Клиенты</a></li>
+            <li><a href="admin-history.html">История</a></li>
           </ul>
         </div>
         <div class="mobileMenu-footer">
-          <div class="mobileMenu-footer__btns"><a class="btn btn-round btn-big" href="make-request.html">Добавить заявку</a></div>
+          <div class="mobileMenu-footer__btns"><a class="btn btn-round btn-big" href="admin-make-request.html">Добавить заявку</a></div>
           <div class="mobileMenu-footer__logout"><a href="#">
               <svg width="28" height="28">
                 <use xlink:href="/img/sprites/sprite.svg#ic_close"></use>
@@ -123,6 +123,29 @@
               a(href="#") Item 3
         .footer-feedback
       -->
+      <div class="popup-colors">
+        <div class="popup-colors__close">
+          <svg width="16" height="16">
+            <use xlink:href="/img/sprites/sprite.svg#ic_close-gray"></use>
+          </svg>
+        </div>
+        <div class="popup-colors__title"></div>
+        <div class="popup-colors__items">
+          <div class="popup-colors__item" data-color="#B3F196">
+            <div class="color" style="background:#B3F196"></div>
+            <div class="desc">0 - 200 <br>микрон</div>
+          </div>
+          <div class="popup-colors__item" data-color="#F6DD85">
+            <div class="color" style="background:#F6DD85"></div>
+            <div class="desc">300 - 500 <br>микрон</div>
+          </div>
+          <div class="popup-colors__item" data-color="#DC8E8E">
+            <div class="color" style="background:#DC8E8E"></div>
+            <div class="desc">500 + <br>микрон</div>
+          </div>
+        </div>
+        <div class="undo btn btn-round" style="display:none">Отменить окрас</div>
+      </div>
       <div class="status" style="display:none">
         <div class="status__message"></div>
         <div class="status__action">Закрыть</div>
