@@ -1,7 +1,7 @@
 mixin input-fileUploadImage(data)
-    .input-file
-        input(type='file' name=data.name id=data.id, data-thingid=data.thingid)
-        label(for=data.id).input-file__input
-            .count
-            .upload-more Загрузить фото
-        .input-file__preview
+  .input-file
+    input(type='file' multiple="multiple" accept="image" name=data.name id=data.id, data-thingid=data.thingid)
+    label(for=data.id).input-file__input
+      .count
+      .upload-more Загрузить фото
+    .input-file__preview

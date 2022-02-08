@@ -1,0 +1,89 @@
+/* colors */
+
+/* dimensions */
+
+/* media breakpoints */
+
+.request {
+  display: flex;
+  flex-grow: 1;
+  min-height: calc(100vh - 124px);
+}
+
+.request.pickup-request .request__itemImage .image {
+  border-radius: 0;
+}
+
+.request .container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.request__sort .value {
+  font-size: 18px;
+}
+
+.request__item {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #9E9E9E;
+  padding: 20px 0;
+}
+
+.request__itemImage {
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.request__itemImage .image {
+  position: relative;
+  padding-top: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.request__itemImage .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.request__itemList {
+  padding-left: 16px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.request__itemList .title {
+  padding-right: 20px;
+  margin-bottom: 8px;
+}
+
+.request__itemList .edit {
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+.request__itemList .list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.request__itemList .value {
+  padding-left: 8px;
+  text-align: right;
+}
+
+.request__btns {
+  padding-top: 25px;
+  margin-top: auto;
+}
+/*# sourceMappingURL=maps/request.css.map */

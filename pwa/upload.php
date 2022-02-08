@@ -8,7 +8,7 @@
     //$image_url = 'adress img';
     $upload_dir = $_SERVER['DOCUMENT_ROOT'] . "/uploads";
     $image_data = $img;
-    $filename = md5($_POST['file']) . '.jpg';   
+    $filename = md5(time()) . '.jpg';   
 
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);

@@ -1,0 +1,21 @@
+/* colors */
+
+/* dimensions */
+
+/* media breakpoints */
+
+section.auth .form__btns {
+  margin-top: 27px;
+  margin-bottom: 13px;
+}
+
+section.auth .form__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.auth .form__options .link {
+  padding-left: 20px;
+}
+/*# sourceMappingURL=maps/auth.css.map */

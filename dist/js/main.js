@@ -11,108 +11,195 @@ window.addEventListener("resize", function () {
     document.documentElement.style.setProperty("--vh", "".concat(vh, "px"));
 });
 
-function fileUpload() {
-    var imgData = {};
-    function sendFiles(files, elem, callback) {
+
+
+function fileUpload(params) {
+
+    this.option = params;
+
+    this.imgData = Object();
+    this.filesArray = [];
+
+    this.init = function(){
+        this.initEventFile()
+        this.initEventRemove()
+    }
+
+    this.fileAjaxUpload = function (filesArray){
+
+        for(let i=0; filesArray.length >= i; i++ ){
+
+            console.log(filesArray[i])
+
+                var item  = filesArray[i];
+
+                var file = item.file;
+                var e = item.reader;
+        
+                var request = new XMLHttpRequest();
+                var data = new FormData();
+                
+        
+                data.append('file', file.name);
+                data.append('data', e.target.result);
+        
+                // load start
+                request.addEventListener('loadstart', function () {
+                    var html = '' +
+                        '<div class="input-file__previewItem loading" id="file_' + e.total + '">' +
+                        '<div class="input-file__previewLoading"></div>' +
+                        '<div class="input-file__previewRemove" data-id="' + e.total + '" >&times;</div>' +
+                        '<div class="input-file__previewImage">' +
+                        '<span class="bgimage" style="background-image: url(' + e.target.result + ')"></span>' +
+                        '</div>' +
+                        '</div>';
+                    var div = document.createElement('div');
+                    div.innerHTML = html.trim();
+                    var filePreview = elem.parentNode.querySelector('.input-file__preview');
+                    filePreview.appendChild(div.firstChild);
+                })
+        
+                // after upload
+                request.addEventListener('readystatechange', function (dataImage) {
+                    if (request.readyState == 4) {
+                        dataImage = JSON.parse(request.responseText);
+                        //callback(e, dataImage);
+                        setTimeout(function () {
+                            var file = document.querySelector('#file_' + e.total);
+                            //file.classList.remove('loading');
+                            var remove = file.querySelector('.input-file__previewRemove');
+                            remove.setAttribute('data-attach-id', dataImage.attach_id);
+                        }, 1000)
+                    }
+                })
+        
+        
+                request.open("POST", '../pwa/upload.php');
+                request.send(data);
+
+        }
+          
+    }
+
+    this.sendFiles = function (files, elem, callback) {
+
+        var _this = this;
+
+        console.log(files, 'files from sendFiles')
+
         for (var i = 0; i < files.length; i++) {
+            
             var file = files.item(i);
             // проверяем что бы небыло одинаковых файлов
-            if (imgData) {
-                var count = 0
-                for (thing in imgData) {
-                    var thingObj = imgData[thing]
-                    for (thingImg in imgData[thing]) {
-                        count++;
-                        if (thingImg == file.size) {
-                            alert('Такой файл уже прикреплен, выберите другой файл ')
-                            return false;
-                        }
-                    }
-                }
+            if (_this.imgData) {
+                // var count = 0
+                // for (thing in _this.imgData) {
+                //     var thingObj = _this.imgData[thing]
+                //     for (thingImg in _this.imgData[thing]) {
+                //         count++;
+                //         if (thingImg == file.size) {
+                //             alert('Такой файл уже прикреплен, выберите другой файл ')
+                //             return false;
+                //         }
+                //     }
+                // }
             }
             //проверяем тип файла
             if (file.type === 'image/jpeg' || file.type === 'image/png') {
+
+
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
-                reader.onload = function (e) {
-                    var request = new XMLHttpRequest();
-                    var data = new FormData();
-                    data.append('file', file.name);
-                    data.append('data', e.target.result);
-                    request.addEventListener('loadstart', function () {
-                        var html = '' +
-                            '<div class="input-file__previewItem loading" id="file_' + e.total + '">' +
-                            '<div class="input-file__previewLoading"></div>' +
-                            '<div class="input-file__previewRemove" data-id="' + e.total + '" >&times;</div>' +
-                            '<div class="input-file__previewImage">' +
-                            '<span class="bgimage" style="background-image: url(' + e.target.result + ')"></span>' +
-                            '</div>' +
-                            '</div>';
-                        var div = document.createElement('div');
-                        div.innerHTML = html.trim();
-                        var filePreview = elem.parentNode.querySelector('.input-file__preview');
-                        filePreview.appendChild(div.firstChild);
-                    })
+                reader.onload = function (event) {
+                    _this.filesArray.push({
+                        file: file, 
+                        reader: event,
+                        length: files.length
+                     })
+                     //console.log(e.target.result)
 
-                    request.addEventListener('readystatechange', function (dataImage) {
-                        if (request.readyState == 4) {
-                            dataImage = JSON.parse(request.responseText);
-                            callback(e, dataImage);
-                            setTimeout(function () {
-                                var file = document.querySelector('#file_' + e.total);
-                                file.classList.remove('loading');
-                                var remove = file.querySelector('.input-file__previewRemove');
-                                remove.setAttribute('data-attach-id', dataImage.attach_id);
-                            }, 1000)
-                        }
-                    })
-                    request.open("POST", 'upload.php');
-                    request.send(data);
-                }
-
-            }
-        }
-    }
-    var fileInputs = document.querySelectorAll('input[type="file"]');
-    fileInputs.forEach(element => {
-        element.addEventListener('change', function () {
-            let files = this.files;
-            let elem = element;
-            sendFiles(files, elem, function (link, dataImage) {
-                var idThing = elem.getAttribute('data-thingid');
-                if (!imgData['thing_' + idThing]) {
-                    var itemImage = imgData['thing_' + idThing] = {};
-                }
-                var itemImage = imgData['thing_' + idThing]
-                itemImage[link.total] = [dataImage.url];
-            });
-            console.log(imgData)
-        })
-    });
-    var removeAttach = document.querySelectorAll('.input-file__previewRemove');
-    document.body.addEventListener('click', function (event) {
-        if (event.target.getAttribute('data-attach-id')) {
-            elem = event.target;
-            var id = elem.getAttribute('data-id');
-            var attach_id = elem.getAttribute('data-attach-id');
-            var input = elem.closest('.input-file');
-            var idThing = input.querySelector('input[type="file"]').getAttribute('data-thingid');
-            var previewItem = elem.parentNode;
-            if (id && delete imgData['thing_' + idThing][id]) {
-                if (confirm('Удалить прикрепленное изображение?')) {
-                    previewItem.remove();
-                    var request = new XMLHttpRequest();
-                    var data = new FormData();
-                    data.append('id', attach_id);
-                    request.open("POST", 'remove.php');
-                    request.send(data);
+                     _this.fileAjaxUpload([
+                        {
+                            file: file, 
+                            reader: event,
+                            length: files.length
+                         }
+                     ]);
                 }
             }
+
         };
-    });
+
+        
+
+        //call function upload
+        
+    }
+
+    this.initEventFile = function(){
+
+        var _this = this;
+        var fileInputs = document.querySelectorAll(this.option.el);
+
+        fileInputs.forEach(element => {
+            element.addEventListener('change', function () {
+
+                
+                _this.sendFiles(this.files, element, function (link, dataImage) {
+
+                    // var idThing = elem.getAttribute('data-thingid');
+                    // if (!_this.imgData['thing_' + idThing]) {
+                    //     var itemImage = _this.imgData['thing_' + idThing] = {};
+                    // }
+                    // var itemImage = _this.imgData['thing_' + idThing]
+                    // itemImage[link.total] = [dataImage.url];
+
+                    console.info('callback sendFiles')
+
+                });
+
+                //console.log(_this.imgData)
+            })
+        });
+    },
+
+    this.initEventRemove = function(){
+
+        // var removeAttach = document.querySelectorAll('.input-file__previewRemove');
+        // document.body.addEventListener('click', function (event) {
+        //     if (event.target.getAttribute('data-attach-id')) {
+        //         elem = event.target;
+        //         var id = elem.getAttribute('data-id');
+        //         var attach_id = elem.getAttribute('data-attach-id');
+        //         var input = elem.closest('.input-file');
+        //         var idThing = input.querySelector('input[type="file"]').getAttribute('data-thingid');
+        //         var previewItem = elem.parentNode;
+        //         if (id && delete imgData['thing_' + idThing][id]) {
+        //             if (confirm('Удалить прикрепленное изображение?')) {
+        //                 previewItem.remove();
+        //                 var request = new XMLHttpRequest();
+        //                 var data = new FormData();
+        //                 data.append('id', attach_id);
+        //                 request.open("POST", 'remove.php');
+        //                 request.send(data);
+        //             }
+        //         }
+        //     };
+        // });
+
+
+    }
+
+
+
+    
 }
 
-var fileUploads = new fileUpload();
+var fileUploads = new fileUpload({
+    el: 'input[type="file"]'
+});
+
+fileUploads.init()
 
 //Mobile menu init
 function mobileMenu() {
