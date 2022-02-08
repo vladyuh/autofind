@@ -128,15 +128,15 @@ block content
                         .name Состояние кузова
                         .toggle: +icons('#ic_expand-20',20)
                     .accordion__content
-                        .form__field.car-details
-                            .car-details__wrapper
-                                include ../../img/car.svg
                         .form__field
                             +input-fileUploadImage({
                             id: "MyFile2",
                             name: "MyFile2",
                             thingid: 3,
                         })
+                        .form__field.car-details
+                            .car-details__wrapper
+                                include ../../img/car.svg  
                         .form__field.collapse
                             +checkbox({
                             class: "collapse-toggle",
@@ -735,3 +735,4 @@ block content
                     button.btn.btn-round.btn-big(type="submit") Отправить отчет
 block scripts
     script(src="js/main.js")
+    script(src="js/report.js")

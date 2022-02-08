@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Добавить клиента</title>
     <meta name="theme-color" content="#fff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="manifest" href="manifest.min.json">
     <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
     <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
@@ -133,7 +134,7 @@
               a(href="#") Item 3
         .footer-feedback
       -->
-      <div class="popup-colors">
+      <div class="popup-colors" data-popup="microns">
         <div class="popup-colors__close">
           <svg width="16" height="16">
             <use xlink:href="/img/sprites/sprite.svg#ic_close-gray"></use>
@@ -154,7 +155,30 @@
             <div class="desc">500 + <br>микрон</div>
           </div>
         </div>
-        <div class="undo btn btn-round" style="display:none">Отменить окрас</div>
+        <div class="undo btn btn-round" style="display:none">Отменить</div>
+      </div>
+      <div class="popup-colors" data-popup="replacement">
+        <div class="popup-colors__close">
+          <svg width="16" height="16">
+            <use xlink:href="/img/sprites/sprite.svg#ic_close-gray"></use>
+          </svg>
+        </div>
+        <div class="popup-colors__title"></div>
+        <div class="popup-colors__items">
+          <div class="popup-colors__item" data-color="#73D2E7">
+            <div class="color" style="background:#73D2E7"></div>
+            <div class="desc">Оригинал</div>
+          </div>
+          <div class="popup-colors__item" data-color="#597DFB">
+            <div class="color" style="background:#597DFB"></div>
+            <div class="desc">Замена</div>
+          </div>
+          <div class="popup-colors__item" data-color="#E46666">
+            <div class="color" style="background:#E46666"></div>
+            <div class="desc">С дефектом</div>
+          </div>
+        </div>
+        <div class="undo btn btn-round" style="display:none">Отменить</div>
       </div>
       <div class="status" style="display:none">
         <div class="status__message"></div>

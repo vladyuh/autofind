@@ -4,15 +4,18 @@
     top: 0;
     left: 0;
     bottom: 0;
-    transform: translateX(-100%);
+    right: 0;
     width: 100%;
     background: #fff;
-    transition: transform 0.3s ease;
+    transition: all 0.2s ease-in-out;
     z-index: 5;
     padding-top: 143px;
     padding-bottom: 35px;
     overscroll-behavior: contain;
     overflow-y: auto;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
 
     .container {
         display: flex;
@@ -22,7 +25,8 @@
     }
 
     &.opened {
-        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
     }
 
     &-header {

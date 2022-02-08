@@ -36,6 +36,17 @@ const requireDir = require("require-dir"),
                 "./src/js/**/*.js"
             ]
         },
+        pwa: {
+            src: [
+                "./pwa/**/*",
+                "./pwa/*",
+            ],
+            dist: "./dist/",
+            watch: [
+                "./pwa/**/*",
+                "./pwa/*",
+            ]
+        },
         images: {
             src: [
                 "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}",
@@ -80,10 +91,12 @@ export { paths };
 export const development = gulp.series("clean",
     gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons"]),
     gulp.parallel("resize"),
+    gulp.parallel("pwa"),
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
     gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons", "gzip"]),
+    gulp.parallel("pwa"),
     gulp.parallel("resize"));
 
 export default development;
